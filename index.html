@@ -10,23 +10,26 @@
     <header id="header">
         <h1><img src="images/logo.svg" alt="moive clip 로고"></h1>
         <ul class="lnb">
-            <li class="view">Stroy</li>
-            <li>Casting</li>
-            <li>Interview</li>
-            <li>Review</li>
-            <li>Sound Track</li>
+            <li class="storyTab view">Stroy</li>
+            <li class="castingTab">Casting</li>
+            <li class="interviewTab">Interview</li>
+            <li class="reviewTab">Review</li>
+            <li class="soundTrackTab">Sound Track</li>
         </ul>
     </header>
-    <section id="stroy">
+    <section id="story">
+        <div id="storySlide">
         <article class="episode01 story">
-            <img src="images/scene01.jpg" alt="장면01">
+            <img src="images/scene01.png" alt="장면01">
             <div class="script rightScript">
-                <p>About Time<span>'s</span> <span>s</span><span>t</span><span>o</span><span>r</span><span>y</span></p>
+                <p>About Time<span>'s story</span></p>
             </div>
         </article>
         <article class="episode02 story">
             <img src="images/scene02.jpg" alt="장면02">
-            <p><strong>팀은 아버지에게 비밀을 듣습니다.</strong></p>
+            <div class="script leftScript">
+                <p><strong>팀은 아버지에게 비밀을 듣습니다.</strong></p>
+            </div>
             <div class="script leftScript">
                 <p>"We can travel in time"</p>
                 <p>"우린 시간을 되돌릴 수 있어"</p>
@@ -37,7 +40,7 @@
             </div>
         </article>
         <article class="episode03 story">
-            <img src="images/scene03.jpg" alt="장면03">
+            <img src="images/scene03.jpg" alt="장면03" class="time">
             <div class="script midScript">
                 <p><strong>팀은 메리에게 첫눈에 반했습니다.</strong></p>
             </div>
@@ -51,7 +54,7 @@
             </div>
         </article> 
         <article class="episode04 story">
-            <img src="images/scene04.jpg" alt="장면04">
+            <img src="images/clock.svg" alt="장면04" class="clock">
             <div class="script rightScript">
                 <p><strong>팀은 시간을 돌렸고, 메리는 시간을 돌린 팀을 기억하지 못했습니다.</strong></p>
             </div>
@@ -59,7 +62,7 @@
         <article class="episode05 story">
             <img src="images/scene05.jpg" alt="장면05">
             <img src="images/scene05_1.png" alt="팀">
-            <img src="images/scene05_2.png" alt="메리">
+            <img src="images/scene05_2.png" alt="메리" class="slideIn">
         </article>
         <article class="episode06 story">
             <img src="images/scene06.jpg" alt="장면06">
@@ -71,7 +74,7 @@
             <img src="images/scene07.jpg" alt="장면07">
         </article>
         <article class="episode08 story">
-            <img src="images/scene08.jpg" alt="장면08">
+            <img src="images/clock.svg" alt="장면08" class="clock">
             <div class="script rightScript">
                 <p><strong>
                     팀은 결혼 이후에도 시간여행을 했습니다.<br>
@@ -87,7 +90,6 @@
         </article>
         <article class="episode10 story">
             <img src="images/scene10_1.jpg" alt="장면10_1">
-            <img src="images/scene10_2.jpg" alt="장면10_2">
             <div class="script leftScript">
                 <p>"Tim, there`s something I have to tell you... I`ve got cancer."</p>
                 <p>"팀, 내가 너한테 말해야 할 게 있어... 나 암에 걸렸어."</p>
@@ -96,38 +98,75 @@
                 <p>"No. No, no, no..."</p>
                 <p>"안돼요, 안돼요 아빠"</p>
             </div>
-            <div class="script rightScript">
-                <p>'인생은 누구나 비슷한 길을 걸어간다 결국엔 늙어서 지난날을 추억하는 노인이 될 뿐이다 사랑은 준비없이 온다. 두려움과 함께 결혼만큼은 따뜻한 사람과 해라'</p>
+        </article>
+        <article class="episode11 story">
+            <img src="images/scene10_2.jpg" alt="장면10_2">
+            <div class="script leftScript">
+                <p>'인생은 누구나 비슷한 길을 걸어간다 결국엔 늙어서 
+                    지난날을 추억하는 노인이 될 뿐이다 사랑은 준비없이 온다. 
+                    두려움과 함께 결혼만큼은 따뜻한 사람과 해라'</p>
             </div>
         </article>
+    </div>
     </section>
     <section id="casting">
         <h2>Casting</h2>
         <article class="actor1 actor">
             <h2>도널 글리슨</h2>
-            <p>배역</p>
-            <h3>팀 레이크 역</h3>
+            <div>
+                <p>배역</p>
+                <h3>팀 레이크 역</h3>
+            </div>
+            <div>
+                <h4>주요 작품</h4>
+                <p>해리 포터와 죽음의 성물 - 빌 위즐리 역</p>
+                <p>엑스 마키나 - 칼렙 역</p>
+                <p>레버넌트: 죽음에서 돌아온 자 - 앤드류 헨리 역</p>
+            </div>
             <div class="profile1 profile"></div>
             <!-- <img src="images/sub1.jpg" alt="도널 글리슨"> -->
         </article>
         <article class="actor2 actor">
             <h2>레이첼 맥아담스</h2>
-            <p>배역</p>
-            <h3>메리 역</h3>
+            <div>
+                <p>배역</p>
+                <h3>메리 역</h3>
+            </div>
+            <div>
+                <h4>주요 작품</h4>
+                <p>핫 칙 - 제시카 역</p>
+                <p>퀸카로 살아남는 법 - 레지나 조지 역</p>
+                <p>노트북 - 제나 로우렌즈 역</p>
+            </div>
             <div class="profile2 profile"></div>
             <!-- <img src="images/sub2.jpg" alt="레이첼 맥아담스"> -->
         </article>
         <article class="actor3 actor">
             <h2>빌 나이</h2>
-            <p>배역</p>
-            <h3>제임스 레이크 역</h3>
+            <div>
+                <p>배역</p>
+                <h3>제임스 레이크 역</h3>
+            </div>
+            <div>
+                <h4>주요 작품</h4>
+                <p>캐리비안의 해적 시리즈 - 데비 존스 역</p>
+                <p>러브 액츄얼리 - 빌리 맥 역</p>
+                <p>작전명 발키리 - 올브리히트 역</p>
+            </div>
             <div class="profile3 profile"></div>
             <!-- <img src="images/sub3.jpg" alt="빌 나이"> -->
         </article>
         <article class="actor4 actor">
             <h2>리디아 윌슨</h2>
-            <p>배역</p>
-            <h3>킷캣 역</h3>
+            <div>
+                <p>배역</p>
+                <h3>킷캣 역</h3>
+            </div>
+            <div>
+                <h4>주요 작품</h4>
+                <p>스타트렉 비욘드 - 칼라라 역</p>
+                <p>올 이즈 트루 - 수잔나 역</p>
+            </div>
             <div class="profile4 profile"></div>
             <!-- <img src="images/sub4.jpg" alt="리디아 윌슨"> -->
         </article>
@@ -137,19 +176,19 @@
         <img src="images/interview.jpg" alt="감독 인터뷰 사진">
         <article class="interview">
             <div class="interviewShow">
-                <p>Question: Why did you not tear Tim (Domhnall Gleeson) and Mary (Rachel McAdams) apart in the middle of the movie only to bring them back together?</p>
+                <h3>Question: Why did you not tear Tim (Domhnall Gleeson) and Mary (Rachel McAdams) apart in the middle of the movie only to bring them back together?</h3>
                 <p>Richard Curtis: Well, I quite liked the idea in the film. There is a kind of habit in romantic films of getting people who hate each other when they meet; he’s a Nazi and she’s a member of the Socialist Worker’s Party (laughs), however will they fall in love? But most of us, when we bump into the people we are going to spend the rest of our life with, quite like them when we first meet them. I quite liked the idea that you could do something where people like each other, and then there was the time travel and then they liked each other again. I’m interested in if you can do it. I was writing about sort of a happiness in a funny way and writing about the interesting business of how things work rather than being really interested in the way things don’t work.</p>
             </div>
             <div class="interviewHide"> 
-                <p>Q: Speaking of the time travel aspect, it’s something that people keep watching these movies for. They’re always keeping an eye out for the loophole or plot holes. Did that make it harder writing the script?</p>
+                <h3>Question: Speaking of the time travel aspect, it’s something that people keep watching these movies for. They’re always keeping an eye out for the loophole or plot holes. Did that make it harder writing the script?</h3>
                 <p>Richard Curtis: Look, you know you’re gonna fail, that’s the thing. I know where I failed in this so you just do your best and the people and the production keep you up to it, and anybody who spots anything that’s wrong will always say it to you because it’s a fun thing to spot when they’re reading the script. So, you know you’re getting closer to true without actually getting there, and it was fun to play with it. It’s also a thing where when you decide you’re going to do a time travel movie, it is something that is in your head as you’re walking around. The thing about not being able to go past the birth of your child was definitely the result of another conversation I was having with someone about how weird it is that you commit your entire life to people who you have no ability to choose, and then I thought that’s so true. And not only that, if I had sex four seconds later, I’d have a different child and then immediately I thought that would become a key plot point.</p>
             </div>
             <div class="interviewHide">
-                <p>Q: This movie has two love stories in it. It has the father and son and it has the man and the woman. How were you able to find the balance so that one didn’t overshadow the other?</p>
+                <h3>Question: This movie has two love stories in it. It has the father and son and it has the man and the woman. How were you able to find the balance so that one didn’t overshadow the other?</h3>
                 <p>Richard Curtis: On the whole you try and rig films to make sure they turn out as you want them to turn out, but I think it seems as though perhaps the strength of the Bill Nighy story is more than I expected. It’s turned out to be more emotional than I expected, and I think that’s all down to the way Bill chose to play it. He chose to play it in such a sort of gentle way that I think, when you see the film, you can insert your own father into the space that Bill creates. Oddly enough, this film is in some ways less manipulative. If you’re doing a movie that ends in a big kiss and a romance, your kind of playing the cards all the way through to try and get the maximum emotion at the end. In this one I always knew that I was always aiming for this bizarrely simple final moment which was just gonna be a guy doing the most banal things in the course of an ordinary day. So, I didn’t think so much about the dynamics of the film, perhaps I have in others. But one of the ways of doing it was by getting them to get married halfway through, so that film’s done and there’s another film to rely on.</p>
             </div>
             <button class="moreBtn">더보기</button>
-            <a href="https://theultimaterabbit.com/2021/08/04/richard-curtis-reflects-on-the-making-of-about-time/" class="moreBtn hide">전체 보기</a>
+            <a href="https://theultimaterabbit.com/2021/08/04/richard-curtis-reflects-on-the-making-of-about-time/" target="_blank" class="moreBtn hide">전체 보기</a>
         </article>
     </section>
     <section id="review">
@@ -265,9 +304,7 @@
         </div>
     </section>
     <section id="soundTrack">
-        <iframe width="1120" height="730" src="https://www.youtube.com/embed/_latgzoqoSE?si=_MeqFqW9yxa7Ira7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="1120" height="730" src="https://www.youtube.com/embed/wrFsC1ldJEc?si=XbBQws6AjhPReo4-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="1120" height="730" src="https://www.youtube.com/embed/atfsD6CjS80?si=v2SUCRLnz3Sdpwi6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>로딩중입니다. 잠시만 기다려주세요.</p>
     </section>
     <footer id="footer">        
     </footer>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    
 *{
     margin : 0;
     padding : 0;
@@ -6,6 +8,10 @@ body{
     height : 100%;
     overflow-x : hidden;
     overflow-y : scroll;
+    scroll-behavior: smooth;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 ul,ol{
     list-style : none;
@@ -25,17 +31,18 @@ h1{
 
 /*section#story*/
 .story{
-    width : 100%;
-    height : 100%;
-    position : relative;
-    top : 0;
-    left : 100%;
+    position : absolute;
+    overflow: hidden;
+    background : black;
 }
 .story:first-child{
     left : 0;
 }
 .story:first-child>.script:only-of-type{
     top : 20%;
+    left: 30%;
+    font-size: 4vw;
+    max-width : 50%;
 }
 .story>*{
     position : absolute;
@@ -44,22 +51,23 @@ h1{
 
 
 /*section#casting*/
+
 .actor{
-    width : 100%;
-    height : 1080px;
-    position : relative;
+    width : calc(100% - 400px);
+    position : absolute;
+    background: white;
 }
 .actor>*{
     position : absolute;
 }
 .profile1{
-    background : url('../images/sub1.jpg')no-repeat 50% 50%;
+    background : url('../images/sub1.jpg')no-repeat 50% 0;
     background-size : 100%;
     width : 40%;
     min-width : 300px;
 }
 .profile2{
-    background : url('../images/sub2.jpg')no-repeat 50% 50%;
+    background : url('../images/sub2.jpg')no-repeat 50% 0;
     background-size : 100%;
     width : 40%;
     min-width : 300px;
@@ -80,7 +88,6 @@ h1{
 
 @media screen and (min-width : 1200px) {
     section{
-        min-width: 1520px;
         overflow : hidden;
         box-sizing: border-box;
         padding-left : 400px;
@@ -89,13 +96,17 @@ h1{
     section>h2{
         margin-bottom : 50px;
     }
-
     /*header*/
     #header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         position : fixed;
         left : 0;
-        padding-left : 100px;
-        top : calc(50% - 215px);
+        top : 0;
+        padding : 0 50px;
+        z-index : 500;
+        background: white;
     }
     #header .view{
         font-weight : bold;
@@ -106,25 +117,33 @@ h1{
         cursor: pointer;
     }
     /*section#story*/
-    #stroy{
-        max-height : 1080px;
+    section#story{
+        position : fixed;
+        left : 0;
+        top : 0;
+        padding-left : 0;
+        color : white;
     }
-    .story{
-        min-width : 1620px;
-        min-height : 1080px;
+    #storySlide{
+        position : relative;
+        left : 0;
+        transition : .1s;
+    }
+    #story.stop{
+        position : absolute;
+    }
+    #story img{
+        position : absolute;
+        z-index : 10;
+        top : 50%;
+        max-height : 90%;
+        right : 20px;
+        max-width : 50%;
     }
     .story>.script{
-        max-width : 20%;
-    }
-    .story>.leftScript{
-        left : 20%;
-    }
-    .story>.midScript{
-        left : 35%;
-        max-width: 15%;
-    }
-    .story>.rightScript{
-        left : 70%;
+        max-width : calc(50% - 400px);
+        left : 80%;
+        font-size : 30px;
     }
     .story>.script:nth-of-type(1){
         top : 25%;
@@ -139,23 +158,51 @@ h1{
         top : 30%;
     }
     .story>.script:only-of-type{
-        top : 50%;
+        top : 40%;
         margin-top : -0.5vw;
+    }
+    .story.episode10>.script:nth-of-type(2){
+        top : 60%;
     }
     .story p{
         margin : 20px 0;
     }
-
+    .script span{
+        position : relative;
+    }
+    .episode05>img:nth-child(2){
+        z-index: 11;
+    }
+    .episode05>img:nth-child(3){
+        z-index: 12;
+    }
+    .clock{
+        transition : transform ease 3s;
+    }
+    #story img.slideIn{
+        right : -100%;
+    }
+    /*#story .episode05:hover .slideIn{
+        transition : 3s;
+        right : 20px;
+    }*/
     /*section#casting*/
+    #casting{
+        position : absolute;
+        font-size : 24px;
+        background-color : white;
+        z-index: 200;
+    }
     .profile{
         height : 80%;
         top : 10%;
+        transition : 1s;
     }
     .actor>*:nth-child(1){
         top : 30%;
     }
     .actor>*:nth-child(2){
-        top : 50%;
+        top : 40%;
     }
     .actor>*:nth-child(3){
         top : 55%;
@@ -176,24 +223,26 @@ h1{
     #interview>img, .interview{
         width : calc(100% - 200px);
     }
+    .interview{
+        padding-top : 20px;
+    }
     .interview p{
         margin : 20px 0;
     }
-
-
-    /*section#interview*/
     .interviewHide{
         display : none;
     }
     .moreBtn{
         display : block;
-        width : 40%;
-        margin-left : 30%;
+        width : 30%;
+        margin-left : 35%;
         padding : 15px 0;
         font-size : calc(1em + 5px);
         border-radius: 9999px;
         border : none;
         background : #FFBF00;
+        cursor: pointer;
+        text-align: center;
     }
     a.moreBtn{
         display : none;
@@ -201,39 +250,73 @@ h1{
     
 
     /*section#review*/
+    section#review{
+        margin-bottom : 0;
+    }
     .reviewList{
         display : flex;
         gap : 40px;
-        flex-wrap: nowrap;
-        overflow : hidden;
-        margin-left : 60px;
+        flex-wrap : nowrap;
+        margin-left : 50px;
+        width: calc(100% - 100px);
+        position : relative;
+        transition : .1s;
     }
     .review{
-        flex : 0 0 400px;
-        height : 80%;
-        margin-top : 10%;
+        flex : 0 0 23vw;
+        box-sizing : border-box;
+        height : 630px;
+        background : #ffdf7f;
+        padding : 20px;
+        border-radius : 10px;
+        cursor: pointer;
+    }
+    .review:nth-child(even){
+        margin-top : calc(80vh - 630px);
+        background : #4e276d;
+        color : white;
     }
     .review>.sum{
         padding : 10px;
         border-bottom : 1px solid #333;
+        text-align: center;
+        position : relative;
+    }
+    .review:nth-child(even)>.sum{
+        border-bottom : 1px solid #eee;
+    }
+    .review>.sum>span{
+        display : inline-block;
+        padding-top : 20px;
+        min-width : 100px;
+        text-align: center;
     }
     .review>.detail{
-        padding : 10px;
+        padding : 10px 10px 0px 10px;
     }
-    .review:nth-of-type(n+4){
-        opacity: 0;
-    }
-    #review .sum img{
+    #review .sum>img{
         border-radius : 50%;
-        width : 30px;
-        height : 30px;
+        width : 300px;
+        height : 300px;
     }
     .sum span{
         display : inline-block;
         line-height: 30px;
     }
     .star{
-        float : right;
+        position : absolute;
+        min-width : 100px;
+        right : 0;
+        bottom : 10px;
+        height : 30px;
+    }
+    .detail{
+        overflow : hidden;
+        text-overflow : ellipsis;
+        display : -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 8;
+        line-clamp: 8;
     }
 }
 @media screen and (max-width : 1199px) {
@@ -248,5 +331,15 @@ h1{
     }
     h4{
         font-size : 2vw;
+    }
+    .story>.leftScript{
+        left : 20%;
+    }
+    .story>.midScript{
+        left : 35%;
+        max-width: 15%;
+    }
+    .story>.rightScript{
+        left : 70%;
     }
 }
